@@ -84,6 +84,45 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;back
   .bratz-mini{width:108px;max-height:140px}
 }
 
+/* BRATZ COMPACT — hard sizing to avoid giant image in GitHub/Vercel */
+.bratz-compact{
+  width:min(440px,100%);
+  margin:22px auto 0;
+  padding:12px 14px;
+  display:grid;
+  grid-template-columns:108px 1fr;
+  gap:14px;
+  align-items:center;
+  border:1px solid rgba(123,79,36,.18);
+  border-radius:22px;
+  background:rgba(248,244,236,.45);
+  box-shadow:0 12px 28px rgba(61,32,16,.08), inset 0 1px 0 rgba(255,255,255,.28);
+  overflow:hidden;
+}
+.bratz-medallion{
+  width:92px;
+  height:122px;
+  margin:0 auto;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  border-radius:999px 999px 26px 26px;
+  background:linear-gradient(180deg,rgba(248,244,236,.72),rgba(229,216,199,.38));
+  border:1px solid rgba(201,166,70,.24);
+  overflow:hidden;
+}
+.bratz-medallion img{
+  width:92px!important;
+  max-width:92px!important;
+  height:auto!important;
+  max-height:122px!important;
+  object-fit:contain!important;
+  object-position:bottom center!important;
+}
+.bratz-note{text-align:left;position:relative;z-index:1}.bratz-note small{display:block;font-size:8px;letter-spacing:.20em;text-transform:uppercase;color:var(--brown-dark);font-weight:600;margin-bottom:6px}.bratz-note span{display:block;font-size:12.5px;line-height:1.55;color:rgba(61,32,16,.72)}
+.bratz-mini{width:82px!important;max-width:82px!important;height:auto!important;max-height:120px!important;object-fit:contain!important;}
+@media(max-width:720px){.bratz-compact{grid-template-columns:1fr;width:min(300px,100%);text-align:center;gap:8px}.bratz-note{text-align:center}.bratz-medallion{width:82px;height:110px}.bratz-medallion img{width:82px!important;max-width:82px!important;max-height:110px!important}.bratz-mini{width:72px!important;max-width:72px!important;max-height:105px!important}}
+
 </style>
 
 </head>
@@ -105,12 +144,13 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;back
           <div class="eyebrow">Mapa Inicial de Marca</div>
           <h1>Construye una <span class="gold-word">marca</span> sin exponer tu vida</h1>
           <p class="subtitle">Descubre qué tipo de presencia puedes construir con lo que ya sabes, qué parte de ti puedes proteger y cómo usar IA sin que tu marca se sienta genérica.</p>
-          <div class="bratz-showcase" aria-label="Muñeca Bratz ESG como referencia visual">
-            <img src="assets/bratz-doll.png" alt="Muñeca Bratz personalizada ESG" />
-            <div class="bratz-copy">
+          <div class="bratz-compact" aria-label="Muñeca Bratz ESG como referencia visual">
+            <div class="bratz-medallion">
+              <img src="assets/bratz-doll-small.png" width="108" height="260" alt="Muñeca Bratz personalizada ESG" style="width:92px;max-width:92px;height:auto;display:block;margin:0 auto;object-fit:contain;" />
+            </div>
+            <div class="bratz-note">
               <small>Identidad visual aplicada</small>
-              <strong>Tu marca también puede tener forma.</strong>
-              <span>Este mapa no solo ordena lo que dices. También ayuda a entender qué identidad visual puede sostener tu presencia.</span>
+              <span>Un ejemplo pequeño de cómo una marca puede tomar forma visual sin dominar la página.</span>
             </div>
           </div>
           <div class="meta">
@@ -145,7 +185,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;back
         </div>
 
         <div class="screen" data-screen="result">
-          <img class="bratz-mini" src="assets/bratz-doll.png" alt="Muñeca Bratz ESG" />
+          <img class="bratz-mini" src="assets/bratz-doll-small.png" width="108" height="260" alt="Muñeca Bratz ESG" style="width:82px;max-width:82px;height:auto;display:block;margin:0 auto 12px;object-fit:contain;" />
           <div class="result-kicker" id="helloLine">Tu resultado inicial</div>
           <div class="result-name" id="resultTitle"></div>
           <p class="result-summary" id="resultSummary"></p>
